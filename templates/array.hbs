@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/arrayC.css">
+    <title>codeFix Module</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+    <div class="topnav">
+      
+      <a class="active" href = "index.html">codeFix Module</a>
+      <a class = "button" href="#about-us">About Us</a>
+      <a class = "button" href="/form">Account</a>
+      <a class = "java" href="#columnb">Java</a>
+      <a class = "cprogramming" href ="#columna">C Programming</a>
+      <a class = "button" href ="/home">Home</a>
+    </div>
+
+    <div class="divisionleft">
+        <p class="topics">LIST OF EXAMPLES</p>
+        <ul class="code-list">
+                {{#each examplescode}}
+            <li><a class="Chapter_X1" href="/arrayC/{{_id}}">{{title}}</a><br><br><br><br><br></li>
+                {{/each}}
+        </ul>
+    </div>
+
+    <div class="divisionright">
+
+            {{#if selectedCodeExample}}
+            <h2>{{selectedCodeExample.title}}</h2>
+
+             {{/if}}   
+              
+            <div class="leftpanel">  
+                <form action="/arrayC/{{ selectedCodeExample._id }}/submit" method="POST">
+                    <input type="hidden" name="codeId" value="{{selectedCodeExample._id}}">
+                    <h3>FIX THE ERROR FIRST</h3>
+                    <textarea name="userCode" rows="10" cols="10" id="falsecode1">{{selectedCodeExample.code}}</textarea>
+                    <br>
+                    <button id = "submit1" type="submit">Submit</button>
+                </form>
+            </div>
+            
+            <div class="rightpanel">
+            <br>
+            {{#if messageIsTrue}}
+            <p>{{selectedCodeExample.code}}</p>
+            <h3>Corrected Code</h3>
+            <textarea name="userCode" rows="10" cols="10" id="falsecode2">{{selectedCodeExample.correctedcode}}</textarea>
+            </div>
+            <div class="bottompanel">
+            <form action="/arrayC/{{ selectedCodeExample._id }}/submit-output" method="POST">
+                <h3>Your Expected Output (Guess)</h3>
+                <textarea id="expectedoutput" name="userOutput" rows="2" cols="30"></textarea>
+                <button id="submit2" type="submit">Submit Output Guess</button>        
+            </form>
+            </div>
+            {{/if}}  
+            <p>{{message}}</p>   
+            <p id="score">Your Score is :{{totalScore}}</p>        
+    </div>  
+    </div> 
+    
+    <div class="bottom_columns">
+        <div id="columna">
+          <h1 id="C">C Programming</h1>
+          <form>
+            <a href="codesc.html">
+              <a href="/variablesC"><input class="Chapter_X" type="button" value="VARIABLES"><br><a/>
+              <a href="/ctrlC"> <input class="Chapter_X" type="button" value="CONTROL STATEMENTS"><br></a>
+              <a href="/functionC"><input class="Chapter_X" type="button" value="FUNCTIONS"><br></a>
+              <a href="/arrayC"><input class="Chapter_X" type="button" value="ARRAYS & STRINGS"><br></a>
+              <a href="/pointer"><input class="Chapter_X" type="button" value="POINTERS"><br><a/>
+
+            </a>
+        </form>
+        </div>
+        <div id="columnb">
+          <h1 id="J">Java</h1>
+          <form>
+            <a href="codesj.html">
+              <a href="/variableJ"><input class="Chapter_X" type="button" value="VARIABLES"><br></a>
+              <a href="/arrayJ"><input class="Chapter_X" type="button" value="ARRAY & STRINGS"><br></a>
+              <a href="/threads"><input class="Chapter_X" type="button" value="THREADING"><br></a>
+              <a href="/exception"><input class="Chapter_X" type="button" value="EXCEPTION HANDLING"><br></a>
+              <a href="/inheritance"><input class="Chapter_X" type="button" value="INHERITANCE"><br></a>
+
+            </a>
+        </form>
+        </div>
+        <div id="columnc">
+          <h1 id="About-Us">About Us</h1>
+          <p id="Creators">Creators : </p>
+          <p class="CreatorDetails">Suryansh Saxena [C31-146]</p>
+          <p class="CreatorDetails">Zeeshan Hyder [C31-147]</p>
+          <p class="CreatorDetails">Saif Shaikh [C31-149]</p>
+          <p id="ContactUs">Contact Us</p>
+          <p class="Contacts">Phone : +91-XXXXXXXXXX</p>
+          <p class="Contacts">E-Mail : abc123@dummyemail.com</p>
+        </div>
+    </div>  
+
+    <footer>
+      <p>Copyright &copy; codeFix Module 2023. All Rights Reserved.</p>
+    </footer> 
+</body>
+</html>
