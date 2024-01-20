@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/code.css"> <!-- Include your CSS file -->
+    <title>Code Examples</title>
+</head>
+<body>
+    <header>
+        <h1 id="header">Code Examples</h1>
+    </header>
+    <div class="container">
+        <div class="left-panel">
+            <h3>Code Examples List</h3>
+            <ul class="code-list">
+                {{#each examplescode}}
+                <li><a href="/c/{{_id}}">{{title}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="right-panel">
+            {{#if selectedCodeExample}}
+            <h2>{{selectedCodeExample.title}}</h2>
+            <pre class="code-snippet">{{selectedCodeExample.code}}</pre>
+            {{/if}}
+
+            <form action="/c/{{ selectedCodeExample._id }}/submit" method="POST">
+                <h3>Your Answer</h3>
+                <textarea name="userCode" rows="10" cols="40"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <p>{{ message }}</p>
+        </div>
+    </div>
+</body>
+</html>

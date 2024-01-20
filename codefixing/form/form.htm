@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myloginform</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+ 
+  <div class="container">
+      <div class="formbox">
+        <h1 id="title">sign up</h1>
+        <form action="/form" method="post">
+          <div class="inputgrp">
+            <div class="inputfield" id="namefield">
+              <i class="fa-regular fa-user"></i>
+              <input type="text" placeholder="enter your name" name="name1">
+            </div>
+
+           
+            <div class="inputfield">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" placeholder="enter your email" name="email">
+            </div>
+
+            <div class="inputfield">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="enter your password" name="password">
+            </div>
+
+          </div>
+          <div class="btnfield">
+                <button type="button"class="btn1" id="signupbtn">Sign up</button>
+                <button type="button"class="btn2" id="signinbtn">sign in</button>
+          </div>
+          <button class="submitbtn">submit</button>
+
+        </form>
+
+      </div>
+  </div>
+  <script src="https://kit.fontawesome.com/529bc31be0.js" crossorigin="anonymous"></script>
+  <script>
+    console.log("working")
+    let signupbtn=document.getElementById('signupbtn')
+    let signinbtn=document.getElementById('signinbtn')
+    let namefield=document.getElementById('namefield')
+    let title=document.getElementById('title')
+
+
+    signinbtn.onclick=function(){
+     
+      namefield.style.maxHeight=0
+      title.innerHTML="Sign in"
+      signupbtn.classList.add("btn2")
+      signinbtn.classList.remove("btn2")
+    }
+    signupbtn.onclick=function(){
+      namefield.style.maxHeight="65px"
+      title.innerHTML="Sign up"
+      signupbtn.classList.remove("btn2")
+      signinbtn.classList.add("btn2")
+      
+    } 
+    
+    
+
+  </script>
+
+</body>
+
+</html>
+/*.formgroup .inputgrp{
+  padding: 20px 15px;
+}
+.inputfield{
+  padding: 10px 10px;
+  margin: 12px 0;
+}
+.inputfield input{
+  width: 150px;
+}
+.btn1{
+  margin-right: 20px;
+  width: 80px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-color: black;
+  color: cyan;
+  cursor: pointer;
+}
+.btn2{
+ margin-left: 20px;
+ width: 80px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-color: rgb(240, 245, 245);
+  color: black;
+  cursor: pointer;
+}*/
